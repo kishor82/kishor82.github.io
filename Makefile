@@ -1,4 +1,4 @@
 .PHONY: build
 build: 
-	rm -rf ./doc
-	hugo -s site --destination ../doc
+	rm -rf ./public
+	hugo -s site --destination ../public

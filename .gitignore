@@ -1,4 +1,4 @@
 # build artifacts
-/doc
+/public
 /site/.hugo_build.lock
 /site/resources
