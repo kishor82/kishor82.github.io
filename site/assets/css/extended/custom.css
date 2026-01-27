@@ -1,0 +1,452 @@
+/* ============================================
+   Kishor Rathva Portfolio - Vibrant Dark Theme
+   Rich amber accents with depth
+   ============================================ */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap');
+
+/* ============================================
+   CSS Variables
+   ============================================ */
+:root {
+  --font-heading: 'Crimson Pro', Georgia, serif;
+  --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --accent-primary: #f59e0b;
+  --accent-secondary: #10b981;
+}
+
+/* ============================================
+   Dark Theme - Rich & Vibrant
+   ============================================ */
+.dark {
+  --primary: #fbbf24;
+  --secondary: #9ca3af;
+  --tertiary: #1f2937;
+  --content: #f3f4f6;
+  --hljs-bg: #111827;
+  --code-bg: #1f2937;
+  --border: #374151;
+  --theme: #0f172a;
+  --entry: #1e293b;
+}
+
+/* Light theme */
+:root:not(.dark) {
+  --primary: #d97706;
+  --secondary: #6b7280;
+  --tertiary: #f8fafc;
+  --content: #1e293b;
+  --hljs-bg: #f8fafc;
+  --code-bg: #f1f5f9;
+  --border: #e2e8f0;
+  --theme: #ffffff;
+  --entry: #ffffff;
+}
+
+/* ============================================
+   Typography
+   ============================================ */
+body {
+  font-family: var(--font-body) !important;
+  letter-spacing: -0.01em;
+}
+
+h1, h2, h3, h4, h5, h6,
+.post-title,
+.first-entry .entry-title {
+  font-family: var(--font-heading) !important;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.post-title {
+  font-size: 2.5rem !important;
+}
+
+.first-entry .entry-title {
+  font-size: 2rem !important;
+}
+
+/* ============================================
+   Code Blocks
+   ============================================ */
+code, pre, .highlight {
+  font-family: var(--font-mono) !important;
+}
+
+code:not([class*="language-"]) {
+  background: var(--code-bg);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: var(--primary);
+}
+
+.dark .highlight {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ============================================
+   Home Info Section - Hero Style
+   ============================================ */
+.home-info {
+  padding: 4rem 0 3rem;
+}
+
+.home-info .entry-content {
+  font-size: 1.15rem;
+  line-height: 1.9;
+}
+
+.home-info h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   Social Icons - Glowing on hover
+   ============================================ */
+.social-icons {
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.social-icons a {
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.social-icons a:hover {
+  transform: translateY(-4px) scale(1.1);
+  color: var(--primary) !important;
+  filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.5));
+}
+
+.social-icons svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* ============================================
+   Post Entries - Card Style
+   ============================================ */
+.post-entry {
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.post-entry:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.dark .post-entry:hover {
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(251, 191, 36, 0.1);
+}
+
+.entry-title {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  color: var(--primary);
+}
+
+/* ============================================
+   Tags - Pill Style
+   ============================================ */
+.post-tags a {
+  background: rgba(251, 191, 36, 0.1);
+  color: var(--primary);
+  padding: 0.4rem 1rem;
+  border-radius: 24px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.post-tags a:hover {
+  background: var(--primary);
+  color: #0f172a;
+  border-color: var(--primary);
+  transform: scale(1.05);
+}
+
+/* ============================================
+   Table of Contents
+   ============================================ */
+.toc {
+  background: var(--entry);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+}
+
+.toc details summary {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+/* ============================================
+   Blockquotes - Accent Border
+   ============================================ */
+blockquote {
+  border-left: 4px solid var(--primary);
+  background: var(--entry);
+  padding: 1.5rem 2rem;
+  border-radius: 0 16px 16px 0;
+  margin: 2rem 0;
+  font-style: italic;
+}
+
+.dark blockquote {
+  background: rgba(251, 191, 36, 0.05);
+}
+
+blockquote p {
+  margin: 0;
+}
+
+/* ============================================
+   Header & Navigation
+   ============================================ */
+.nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.logo a {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--primary) !important;
+}
+
+#menu a {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+#menu a:hover,
+#menu a.active {
+  color: var(--primary) !important;
+  background: rgba(251, 191, 36, 0.1);
+}
+
+/* Theme toggle button glow */
+#theme-toggle {
+  transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.5));
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   Selection - Amber highlight
+   ============================================ */
+::selection {
+  background: rgba(251, 191, 36, 0.4);
+  color: #ffffff;
+}
+
+/* ============================================
+   Scroll Bar - Styled
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--theme);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--primary), #d97706);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fcd34d, var(--primary));
+}
+
+/* ============================================
+   Post Content Enhancements
+   ============================================ */
+.post-content {
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+.post-content h2 {
+  margin-top: 3rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border);
+  color: var(--primary);
+}
+
+.dark .post-content h2 {
+  border-image: linear-gradient(90deg, var(--primary), transparent) 1;
+}
+
+.post-content h3 {
+  color: var(--primary);
+  margin-top: 2.5rem;
+}
+
+.post-content ul {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.post-content ul li {
+  position: relative;
+  padding-left: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-content ul li::before {
+  content: "→";
+  color: var(--primary);
+  font-weight: bold;
+  position: absolute;
+  left: -1.5rem;
+}
+
+.post-content a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.post-content a:hover {
+  border-bottom-color: var(--primary);
+}
+
+/* ============================================
+   Horizontal Rule - Gradient
+   ============================================ */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--primary),
+    transparent
+  );
+  margin: 3rem 0;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Staggered entry animations */
+.post-entry {
+  animation: fadeInUp 0.5s ease-out both;
+}
+.post-entry:nth-child(1) { animation-delay: 0.1s; }
+.post-entry:nth-child(2) { animation-delay: 0.2s; }
+.post-entry:nth-child(3) { animation-delay: 0.3s; }
+.post-entry:nth-child(4) { animation-delay: 0.4s; }
+.post-entry:nth-child(5) { animation-delay: 0.5s; }
+
+/* ============================================
+   Back to Top Button
+   ============================================ */
+#top-link {
+  background: var(--primary);
+  border-radius: 50%;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+#top-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+}
+
+#top-link svg {
+  color: #0f172a;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 768px) {
+  .post-title {
+    font-size: 2rem !important;
+  }
+  
+  .home-info h1 {
+    font-size: 2.25rem;
+  }
+  
+  .first-entry .entry-title {
+    font-size: 1.4rem !important;
+  }
+  
+  .post-content {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+  .nav, .footer, .toc, .share-buttons, .paginav {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+    background: white !important;
+    color: black !important;
+  }
+}

@@ -1,4 +1,135 @@
 baseURL = 'https://kishor82.github.io/'
 languageCode = 'en-us'
 title = 'Kishor Rathva'
-theme = 'ananke'
+
+# Use Hugo modules for theme - PaperMod is actively maintained
+[module]
+  [[module.imports]]
+    path = "github.com/adityatelange/hugo-PaperMod"
+
+# SEO & Robots
+enableRobotsTXT = true
+
+[pagination]
+  pagerSize = 5
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[params]
+  author = "Kishor Rathva"
+  description = "Senior Software Engineer passionate about full-stack development, AI agents, and building tools that make developers more productive."
+  
+  # PaperMod specific settings
+  env = "production"
+  defaultTheme = "dark"
+  disableThemeToggle = false
+  ShowReadingTime = true
+  ShowShareButtons = false  # Disable share buttons (X, Reddit, Facebook, etc.)
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowWordCount = false
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  hidemeta = false
+  hideSummary = false
+  showtoc = true
+  tocopen = false
+  
+  # Home info mode
+  [params.homeInfoParams]
+    Title = "Hey, I'm Kishor 👋"
+    Content = """
+Software Engineer passionate about building robust, scalable applications.
+
+Currently obsessed with **AI agents**, **developer tooling**, and finding the balance between leveraging AI and maintaining engineering excellence.
+
+*"AI is not going to replace you. The person using AI will."*
+"""
+
+  # Social icons - only GitHub and LinkedIn
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/kishor82"
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/kishor-rathva"
+
+  # Cover image settings
+  [params.cover]
+    hidden = false
+    hiddenInList = false
+    hiddenInSingle = false
+
+  # Edit post link
+  [params.editPost]
+    URL = "https://github.com/kishor82/kishor82.github.io/tree/main/site/content"
+    Text = "Suggest Changes"
+    appendFilePath = true
+
+  # Profile mode (alternative to homeInfoParams)
+  [params.profileMode]
+    enabled = false
+    title = "Kishor Rathva"
+    subtitle = "Senior Software Engineer • Full-Stack Developer • Open Source Enthusiast"
+    imageUrl = ""
+    imageWidth = 120
+    imageHeight = 120
+
+  # Fuse.js based search
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = ["title", "permalink", "summary", "content"]
+
+# Menu
+[menu]
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 1
+  [[menu.main]]
+    identifier = "posts"
+    name = "Blog"
+    url = "/posts/"
+    weight = 2
+  [[menu.main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 3
+  [[menu.main]]
+    identifier = "search"
+    name = "🔍"
+    url = "/search/"
+    weight = 4
+
+# Outputs for search
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# Markdown rendering
+[markup]
+  [markup.highlight]
+    style = "dracula"
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+# Minify output
+[minify]
+  disableXML = true
+  minifyOutput = true
